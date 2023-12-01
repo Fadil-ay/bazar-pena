@@ -104,6 +104,7 @@
         Scripts
     ***********************************-->
     @include('layouts.script')
+    @yield('js')
 
 </body>
 
