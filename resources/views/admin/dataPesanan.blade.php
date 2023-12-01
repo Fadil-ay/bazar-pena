@@ -115,14 +115,19 @@
                                                                     <td>{{ $d->created_at }}</td>
                                                                     <td>
                                                                         
-                                                                        <form action="{{ route('hapus', $d->id) }}" method="POST">
+                                                                        {{-- <form action="{{ route('hapus', $d->id) }}" method="POST">
                                                                             @csrf
                                                                             @method('DELETE')
-                                                                            <button type="submit" class="btn btn-danger"><i
+                                                                            <button type="submit" class="btn btn-danger delete-confirm"><i
                                                                                     class="fa fa-trash-o fa-fw"
                                                                                     aria-hidden="true"></i></button>
 
-                                                                        </form>
+                                                                        </form> --}}
+                                                                        <a
+                                                                            href="{{ route('hapus',$d->id) }}"
+                                                                            class="btn btn-danger delete-confirm">
+                                                                            <i class="fa fa-trash-o fa-fw"></i>
+                                                                        </a>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach

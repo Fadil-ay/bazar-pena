@@ -89,10 +89,9 @@ public function UpdateData(request $request,$id){
 
 
 public function deleteData($id){
-    $data = DataPesanan::where('id', $id)->first();
-    $data->delete();
-    Alert::success('validasi sukses');
-    return redirect()->back();
+    $data = DataPesanan::find($id);
+        Alert::success('Behasil', 'Data Berhasil Di Hapus');
+        return redirect()->back();
 }
 
 }

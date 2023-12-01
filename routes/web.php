@@ -29,6 +29,10 @@ Route::get('/tambahanggota', function(){
     return view('admin.tambahAnggota');
 });
 
+Route::get('/tambahMenu', function(){
+    return view('admin.tambahMenu');
+});
+
 Route::prefix('/dataPesanan')->controller(DataPesanaController::class)->group(function () {
     Route::get('/', 'getAllData');
     Route::get('/dasboard', 'getAllData2');
@@ -36,7 +40,7 @@ Route::prefix('/dataPesanan')->controller(DataPesanaController::class)->group(fu
     Route::delete('/deletedatapesanan/{id}' ,'deleteData')->name('hapus');
 });
 
-Route::prefix('/tambahAnggota')->controller(dataAnggotaController::class)->group(function () {
+Route::prefix('/tambahanggota')->controller(dataAnggotaController::class)->group(function () {
     Route::get('/', 'getAllData2');
     Route::post('/createanggota', 'createData2')->name('tambahdataanggota');
     Route::delete('/deleteanggota/{id}' ,'deleteData2')->name('hapusdataanggota');
